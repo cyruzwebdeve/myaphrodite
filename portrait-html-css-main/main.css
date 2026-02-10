@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+}
+
+p {
+    font-size: 12px;
+    line-height: 8px;
+    text-align: justify;
+    background: url(image.jpg) no-repeat center;
+    background-size: cover; /* Changed from 'contain' */
+    background-attachment: fixed;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent; /* Changed from -webkit-text-fill-color */
+    -webkit-text-fill-color: transparent; /* Fixed the rgba syntax */
+}
+
+
+        /* Glow effect that will be controlled by JavaScript */
+        #lyrics.glow {
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8))
+                    drop-shadow(0 0 20px rgba(255, 255, 255, 0.6))
+                    drop-shadow(0 0 30px rgba(255, 255, 255, 0.4));
+        }
+
+        /* Audio controls */
+        #controls {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 25px;
+            border-radius: 50px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        button {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .file-label {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .file-label:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        #status {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 12px;
+        }
+
+        /* Visualizer bars */
+        #visualizer {
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 3px;
+            height: 50px;
+            align-items: flex-end;
+        }
+
+        .bar {
+            width: 4px;
+            background: linear-gradient(to top, #ff00ff, #00ffff);
+            border-radius: 2px;
+            transition: height 0.1s ease-out;
+        }
